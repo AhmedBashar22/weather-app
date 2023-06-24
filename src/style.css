@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@font-face {
+  font-family: 'Alumni Sans';
+  src: url('./assets/AlumniSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./assets/NotoSans-Regular.ttf');
+}
+
+.body {
+  @apply overflow-clip;
+}
+
+.card {
+  background: rgba(104, 104, 104, 0.08);
+  @apply shadow-md;
+}
+
+.home {
+  @apply default-color min-h-screen;
+  font-family: 'Alumni Sans';
+  background: conic-gradient(
+    from 123.29deg at 121.98% 123.1%,
+    #110623 -136.19deg,
+    #110623 140.39deg,
+    #330087 175.41deg,
+    #330087 190.61deg,
+    #110623 223.81deg,
+    #110623 514.39deg
+  );
+}
+
+.default-color {
+  color: #CECECE;
+  border-color: #CECECE;
+}
+
+
+
+/* Home */
+
+.home {
+  @apply p-5;
+}
+
+
+
+/* Search Results */
+
+.search-results-bg {
+  @apply absolute top-0 left-0 w-screen h-screen bg-black opacity-25;
+}
+
+.search-results {
+  @apply absolute top-0 left-0 w-screen h-screen flex flex-col justify-center items-center;
+}
+
+.search-results-list {
+  @apply bg-white md:text-xl text-4xl text-black px-5 pb-4 w-3/4 rounded-b;
+}
+
+.search-result {
+  @apply hover:text-purple-800 my-2;
+}
+
+.exit-button-wrapper {
+  @apply flex w-3/4 justify-between items-center md:text-4xl text-6xl font-bold text-black rounded-t bg-white px-4 pt-4;
+}
+
+.exit-button {
+  background: url('https://api.iconify.design/ph/x-bold.svg') no-repeat center center / contain;
+  @apply md:w-10 md:h-10 w-14 h-14;
+}
+
+
+
+/* Home Header */
+
+.home-header {
+  @apply text-base flex items-center mb-3 md:text-base;
+}
+
+.searchbar {
+  @apply flex card rounded-full md:py-2 md:px-3 py-2 px-3 w-full relative;
+}
+
+.search-input {
+  @apply bg-transparent w-full focus:outline-none mr-3;
+}
+
+.autocomplete-list, .loading-message {
+  @apply absolute top-10 left-0 rounded bg-white w-5/6 mx-6 p-3 overflow-y-scroll max-h-screen text-black;
+}
+
+.unit-toggle-button {
+  @apply flex items-center card rounded-full md:py-2 md:px-3 py-2 px-3 md:ml-3 ml-3;
+}
+
+.red-dot {
+  @apply w-4 h-4 md:w-2 md:h-2 rounded-full bg-red-500 md:mr-1 mr-2;
+}
+
+.green-dot {
+  @apply w-4 h-4 md:w-2 md:h-2 rounded-full bg-green-500 md:mr-1 mr-2;
+}
+
+/* Home Body */
+
+.home-body {
+  @apply gap-12 flex flex-col md:grid grid-cols-12 grid-rows-2 md:gap-4 mb-9;
+}
+
+
+
+/* Main Weather Display */
+
+.main-weather-display {
+  @apply row-span-2 col-span-4 flex flex-col items-center justify-center;
+}
+
+.main-weather-display .icon img {
+  @apply w-52 md:w-52;
+}
+
+.main-weather-display .temp {
+  @apply text-5xl md:text-5xl my-5;
+}
+
+.main-weather-display .desc {
+  @apply text-3xl md:text-3xl;
+}
+
+.main-weather-display .min-max {
+  @apply text-xl md:text-xl;
+}
+
+
+
+/* Weather Display Container */
+
+.daily-forecast {
+  @apply text-xl row-span-1 col-span-8 card flex rounded-lg items-center md:px-5 md:py-5 px-5 py-5 md:text-xl overflow-x-scroll;
+}
+
+.daily-forecast .weather-display {
+  @apply flex flex-col items-center justify-center md:m-1 mr-2;
+}
+
+.daily-forecast .weather-display .temp {
+  @apply font-semibold;
+}
+
+.daily-forecast .weather-display .icon img {
+  @apply w-auto md:w-auto md:h-auto;
+}
+
+
+
+/* Weather Detail Container */
+
+.weather-details {
+  @apply card row-span-1 col-span-3 grid grid-cols-3 grid-rows-2 rounded-lg md:px-5 md:py-5 px-5 py-5 md:text-lg text-xl whitespace-nowrap;
+}
+
+.weather-details .weather-attribute {
+  @apply flex flex-col items-center justify-center;
+}
+
+.weather-details .weather-attribute .icon div {
+  @apply my-3 md:w-9 md:h-9 w-9 h-9 ;
+}
+
+.weather-details .weather-attribute .measurement {
+  @apply font-bold;
+}
+
+
+
+/* Weather Forecast Container */
+
+.weekly-forecast {
+  @apply card row-span-1 col-span-5 flex rounded-lg items-center md:px-5 md:py-5 px-5 py-5 md:text-lg text-xl overflow-x-scroll;
+}
+
+.weekly-forecast .weather-display {
+  @apply flex flex-col items-center md:m-1 mr-2;
+}
+
+.weekly-forecast .weather-display .min, .weekly-forecast .weather-display .max {
+  @apply my-1 font-semibold;
+}
+
+
+
+/* Home Footer */
+
+.home-footer {
+  @apply flex md:flex-row flex-row-reverse justify-between px-2;
+}
+
+.home-footer button {
+  @apply md:border-2 border-4 rounded-full md:p-5 p-3 text-xl flex items-center h-min md:static fixed bottom-3 left-3 md:bg-transparent bg-purple-950;
+}
+
+.locate-me-icon {
+  @apply current-location-icon md:w-8 md:h-8 w-8 h-8;
+}
+
+.locate-me-label {
+  @apply hidden md:block;
+}
+
+.home-footer p {
+  @apply ml-3;
+}
+
+.location-display-icon {
+  @apply location-pin-icon md:w-10 md:h-10 w-10 h-10;
+}
+
+.home footer .location-display {
+  @apply grid md:grid-cols-3 md:grid-rows-2 grid-cols-5 grid-rows-2 p-5 md:text-base text-base whitespace-nowrap;
+}
+
+.home footer .location-display .icon {
+  @apply row-span-2 flex justify-center items-center;
+}
+
+.home footer .location-display p {
+  @apply md:col-span-2 col-span-4 flex items-center;
+}
+
+
+
+/* Icons */
+
+.drop-icon {
+  background: url('https://api.iconify.design/material-symbols/water-drop.svg?color=%23CECECE') no-repeat center center / contain;
+}
+
+.temperature-icon {
+  background: url('https://api.iconify.design/mdi/thermometer.svg?color=%23CECECE') no-repeat center center / contain;
+}
+
+.wind-icon {
+  background: url('https://api.iconify.design/ph/wind-bold.svg?color=%23CECECE') no-repeat center center / contain;
+}
+
+.cloud-icon {
+  background: url('https://api.iconify.design/ic/baseline-cloud.svg?color=%23CECECE') no-repeat center center / contain;
+}
+
+.flag-icon {
+  background: url('https://api.iconify.design/ion/flag.svg?color=%23CECECE') no-repeat center center / contain;
+}
+
+.current-location-icon {
+  background: url('https://api.iconify.design/bx/current-location.svg?color=%23cecece') no-repeat center center / contain;
+}
+
+.location-pin-icon {
+  background: url('https://api.iconify.design/fluent/location-12-filled.svg?color=%23cecece') no-repeat center center / contain;
+}
